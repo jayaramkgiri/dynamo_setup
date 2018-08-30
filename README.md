@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup:
 
-Things you may want to cover:
+Run 
+$bundle install
 
-* Ruby version
+place your AWS keys in /config/initializers/aws.rb
 
-* System dependencies
+Start your rails server
 
-* Configuration
+$rails s
 
-* Database creation
+Using APIs
 
-* Database initialization
+Creating a User
 
-* How to run the test suite
+POST localhost:3000/users
+{
+	"user": 
+	{
+		"name": "Kumar",
+		"email": "dummy1"
+	}
+}
 
-* Services (job queues, cache servers, search engines, etc.)
+Listing All users
+GET localhost:3000/users
 
-* Deployment instructions
+Show User
+GET localhost:3000/users//438134e5-a29c-4cbe-be4b-88b510adaa9a
 
-* ...
+Delete User
+DELETE localhost:3000/users//438134e5-a29c-4cbe-be4b-88b510adaa9a
+
+Update User
+PATCH localhost:3000/users//438134e5-a29c-4cbe-be4b-88b510adaa9a
+{
+	"user": 
+	{
+		"name": "Kumar",
+		"email": "dummy1"
+	}
+}
